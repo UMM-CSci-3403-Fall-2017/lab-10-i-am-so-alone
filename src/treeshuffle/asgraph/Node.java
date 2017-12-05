@@ -37,9 +37,19 @@ public class Node extends Tree {
 		return operator == other.operator && left.equals(other.left) && right.equals(other.right);
 	}
 
+	private int hashCode;
 	@Override
 	public int hashCode() {
-		 return operator + left.hashCode() + right.hashCode();
+		int result = hashCode;
+
+		if (result == 0){
+			result = 17;
+			result = 31 * result + left.hashCode();
+			result = 31 * result + right.hashCode();
+			hashCode = result;
+		}
+
+		return result;
 	}
 
 	@Override

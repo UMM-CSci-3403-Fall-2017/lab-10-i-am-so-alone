@@ -5,7 +5,7 @@ import java.util.Map;
 
 public abstract class Tree {
 	
-	private static final boolean USE_CACHE = true;
+	private static final boolean USE_CACHE = false;
 
 	public int totalTrees = 0;
 	public Tree() {
